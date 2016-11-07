@@ -8,11 +8,12 @@ public class Ligne implements IVisitable{
         this.name = name;
     }
 
-    public void accept(IVisitor visiteur) {
-
-    }
-
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void accept(IVisitor visiteur) {
+        visiteur.visit(this);
     }
 }
